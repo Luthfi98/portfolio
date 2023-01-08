@@ -5,11 +5,11 @@
         <meta charset="utf-8" />
         <title><?= web()->name.' | '. $title ?></title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Premium Bootstrap 4 Landing Page Template" />
-        <meta name="keywords" content="bootstrap 4, premium, marketing, multipurpose" />
-        <meta content="Shreethemes" name="author" />
+        <meta name="description" content="<?= web()->seo_description ?>" />
+        <meta name="keywords" content="<?= web()->seo_tag ?>" />
+        <meta content="LUTHFI IHDALHUSNAYAIN" name="author" />
         <!-- favicon -->
-        <link rel="shortcut icon" href="images/favicon.ico">
+        <link rel="shortcut icon" href="<?= base_url(web()->icon) ?>">
         <!-- BOOTSTRAT -->
         <link href="<?= base_url('assets/landing/') ?>css/bootstrap.min.css" rel="stylesheet" type="text/css" />     
         <!--OWL SLIDER-->
