@@ -77,7 +77,7 @@ class Projects extends CI_Controller {
 			$project = new Project;
 			$project->title = $request['title'];
 			$project->type = $request['type'];
-			$project->slug = url_title($request['title'], 'dash', 'true');
+			$project->slug = url_title($request['title'], 'dash', true);
 			$project->description = $request['description'];
 			if ($_FILES['image']['name'] != '') {
 				$project->image = $this->session->userdata('image');
@@ -146,7 +146,7 @@ class Projects extends CI_Controller {
 		if ($this->form_validation->run()) {
 			$project->title = $request['title'];
 			$project->type = $request['type'];
-			$project->slug = url_title($request['title'], 'dash', 'true');
+			$project->slug = url_title($request['title'], 'dash', true);
 			$project->description = $request['description'];
 			if ($_FILES['image']['name'] != '') {
 				$project->image = $this->session->userdata('image');

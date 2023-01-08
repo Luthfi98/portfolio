@@ -22,7 +22,7 @@ class Welcome extends CI_Controller {
 	{
 		$experience = Experience::orderBy('start_at', 'DESC')->get();
 		$skill = Skill::get();
-		$project = Project::get();
+		$project = Project::limit(6)->get();
 		$data = [
 			'title' => 'Home',
 			'experience' => $experience,
@@ -32,4 +32,19 @@ class Welcome extends CI_Controller {
 		];
 		$this->template->load('templates/landing','landing/home', $data,FALSE);
 	}
+
+	function project($slug)
+	{
+		$project = Project::where('slug', $slug)->first();
+		$projects = Project::where('id', '!=', $project->id)->limit(3)->get();
+		$type = Project::groupBy('type')->get(['type']);
+		$data = [
+			'title' => $project->title,
+			'project' => $project,
+			'projects' => $projects,
+			'type' => $type
+		];
+		$this->template->load('templates/landing','landing/project-detail', $data,FALSE);
+	}
+
 }

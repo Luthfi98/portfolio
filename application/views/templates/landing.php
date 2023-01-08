@@ -52,26 +52,17 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <ul class="navbar-nav ml-auto navbar-center" id="mySidenav">
-                        <li class="nav-item active">
-                            <a href="#home" class="nav-link">Home</a>
+                        <li class="nav-item">
+                            <a href="<?= $this->uri->segment(1) ? base_url('#home') : "#home" ?>" class="nav-link">Home</a>
                         </li>
                         <li class="nav-item"> 
-                            <a href="#experience" class="nav-link">Experience</a>
+                            <a href="<?= $this->uri->segment(1) ? base_url('#skill') : "#skill" ?>" class="nav-link">Skill</a>
+                        </li>
+                        <li class="nav-item"> 
+                            <a href="<?= $this->uri->segment(1) ? base_url('#experience') : "#experience" ?>" class="nav-link">Pengalaman</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#service" class="nav-link">Services</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#work" class="nav-link">Project</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#testimonial" class="nav-link">Reviews</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#blog" class="nav-link last-elements">blog</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#contact" class="nav-link last-elements">Contact</a>
+                            <a href="<?= $this->uri->segment(1) ? base_url('#project') : "#project" ?>" class="nav-link">Project</a>
                         </li>
                     </ul>
                 </div>
@@ -84,21 +75,11 @@
         <!-- FOOTER START -->
         <footer class="bg-dark footer-three">
             <div class="container">
-                <div class="row align-items-center">
+                <div class="row justify-content-center">
                     <div class="col-sm-6">
-                        <div class="copy-rights text-sm-left">
-                            <p class="mb-0">© 2019 Quickgen. Design by Shreethemes.</p>
+                        <div class="copy-rights text-sm-center">
+                            <p class="mb-0">© <?= date('Y').' '. web()->name ?></p>
                         </div>
-                    </div><!--end col-->
-
-                    <div class="col-sm-6">
-                        <ul class="list-unstyled text-sm-right footer-social-icon mt-30">
-                            <li class="list-inline-item"><a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a></li>
-                            <li class="list-inline-item"><a href="#" class="vimeo"><i class="fab fa-vimeo-v"></i></a></li>
-                            <li class="list-inline-item"><a href="#" class="dribbble"><i class="fab fa-dribbble"></i></a></li>
-                            <li class="list-inline-item"><a href="#" class="instagram"><i class="fab fa-instagram"></i></a></li>
-                            <li class="list-inline-item"><a href="#" class="twitter"><i class="fab fa-twitter"></i></a></li>
-                        </ul>
                     </div><!--end col-->
                 </div><!--end row-->
             </div><!--end container-->
