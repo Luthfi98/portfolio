@@ -1,13 +1,14 @@
 <!-- HOME START-->
 <section class="bg-home" style="background-color: #030d0f;" id="home">
+<!-- <section class="bg-home" style="background-color: #030d0f; background-image:url(<?= base_url('assets/landing/images/home/bg-personal.jpg')?>)" id="home"> -->
     <div class="home-center">
         <div class="home-desc-center">
             <div class="container">
                 <div class="row pt-70">
                     <div class="col-lg-8">
                         <div class="title-heading">
-                            <h1 class="text-white"><?= web()->name ?></h1>
-                            <h2 class="text-white mb-4">Halo, Saya adalah seorang <span class="element text-custom" data-elements=" <?= web()->seo_tag ?>"></span></h2>                                    
+                            <h1 class="text-white">Luthfi Ihdalhusnayain</h1>
+                            <h2 class="text-white mb-4">Saya adalah seorang  <span class="element text-custom" data-elements=" <?= web()->seo_tag ?>"></span></h2>                                    
                             <p class="text-light mx-auto"><?= web()->seo_description ?></p>
                             <div class="mt-3">
                                 <a href="#" class="btn btn-custom-white mr-3">View Portfolio</a>
@@ -149,7 +150,7 @@
             <div class="col-md-8">
                 <div class="section-title text-center">
                     <h6>Portfolio</h6>
-                    <h3 class="f-24">Project Terbaru</h3>
+                    <h3 class="f-24 text-light">Project Terbaru</h3>
                     <div class="line-bot"></div>
                     <div class="spacer-15"></div>
                     <p class="text-light">Berikut beberapa project terakhir yang saya kerjakan.</p>
