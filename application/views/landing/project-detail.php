@@ -18,6 +18,7 @@
                         </div>
 
                         <div class="post-content">
+                            <h4><?= $project->title ?></h4>
                             <p class="text-muted"><?= $project->description ?></p>
                         </div>
 
