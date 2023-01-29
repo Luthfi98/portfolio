@@ -41,7 +41,7 @@
 				<p>
 					<span style="font-size: 30px; font-weight: bold;">LUTHFI IHDALHUSNAYAIN</span> 
 					<br>
-					<span><?= str_replace("||", "|", web()->address).' | '.web()->phone.' | '.web()->email ?></span>
+					<span><?= web()->zip_code.' | '.web()->city.' | '.web()->address.' | '.web()->phone.' | '.web()->email ?></span>
 				</p>
 			</td>
 		</tr>
@@ -53,24 +53,65 @@
 		</tr>
 
 		<tr>
-			<td><?= web()->seo_description ?></td>
+			<td><?= web()->about ?></td>
+		</tr>
+	</table>
+	<table width="100%">
+		<tr>
+			<td width="50%">
+				<table>
+					<tr>
+						<td><b>Tempat/Tanggal Lahir</b></td>
+						<td> : <?= web()->pob.', '.date_format_indo(web()->dob) ?></td>
+					</tr>
+					<tr>
+						<td><b>Jenis Kelamin</b></td>
+						<td> : <?= web()->gender ?></td>
+					</tr>
+				</table>
+			</td>
+			<td>
+				<table>
+					<tr>
+						<td><b>Status Pernikahan</b></td>
+						<td> : <?= web()->marital_status ?></td>
+					</tr>
+					<tr>
+						<td><b>Tinggi Badan</b></td>
+						<td> : <?= web()->height ?></td>
+					</tr>
+				</table>
+			</td>
 		</tr>
 	</table>
 	<hr>
 	<table width="100%" cellspacing="0">
 		<tr>
-			<th style="text-align: left;">PENDIDIKAN</th>
+			<th colspan="2" style="text-align: left;">PENDIDIKAN</th>
 		</tr>
+		<?php foreach ($education as $value): ?>
+			<tr>
+				<td width="70%" style="padding-top: 6px;"><b><?= $value->name ?></b></td>
+				<td style="text-align: right; padding-top: 6px; vertical-align: top;"><?= date("M-Y",strtotime($value->in)) ?> - <?= $value->out ? date("M-Y",strtotime($value->out)) : 'Sekarang' ?></td>
+			</tr>
+			<tr>
+				<td><b><?= $value->level ?></b> <?= $value->major ?></td>
+				<td style="text-align: right; vertical-align: top;"><b><?= $value->ipk ?></b></td>
+			</tr>
+			<tr>
+				<td><?= $value->title ?></td>
+			</tr>
+		<?php endforeach ?>
 	</table>
 	<hr>
 	<table width="100%" cellspacing="0">
 		<tr>
-			<th colspan="2" style="text-align: left; padding-bottom: 2rem;">PENGALAMAN KERJA</th>
+			<th colspan="2" style="text-align: left;">PENGALAMAN KERJA</th>
 		</tr>
 		<?php foreach ($experience as $value): ?>
 		<tr>
-			<td width="70%"><b> &bull; &nbsp;<?= strtoupper($value->office) ?></b></td>
-			<td width="30%" style="text-align: right; vertical-align: top;" rowspan="2">(<?= date("M-Y", strtotime($value->start_at))  ?> - <?= $value->end_at ? date("M-Y", strtotime($value->end_at)) : 'Sekarang' ?>)</td>
+			<td style="padding-top: 6px;" width="70%"><b> &bull; &nbsp;<?= strtoupper($value->office) ?></b></td>
+			<td width="30%" style="text-align: right; vertical-align: top; padding-top: 6px;" rowspan="2">(<?= date("M-Y", strtotime($value->start_at))  ?> - <?= $value->end_at ? date("M-Y", strtotime($value->end_at)) : 'Sekarang' ?>)</td>
 		</tr>
 		<tr>
 			<td> <?= $value->description ?></td>

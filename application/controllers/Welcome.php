@@ -54,11 +54,13 @@ class Welcome extends CI_Controller {
 		$experience = Experience::orderBy('start_at', 'DESC')->get();
 		$skill = Skill::get();
 		$project = Project::get();
+		$education = Education::get();
 		$data = [
 			'title' => 'Curiculum Vitae Luthfi Ihdalhusnayain',
 			'experience' => $experience,
 			'skill' => $skill,
-			'project' => $project
+			'project' => $project,
+			'education' => $education,
 		];
 
 		$html = $this->load->view('cv-pdf', $data, true);
