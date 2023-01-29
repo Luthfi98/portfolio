@@ -47,4 +47,22 @@ class Welcome extends CI_Controller {
 		$this->template->load('templates/landing','landing/project-detail', $data,FALSE);
 	}
 
+	public function cv()
+	{
+		$this->load->library('Pdf');
+		
+		$experience = Experience::orderBy('start_at', 'DESC')->get();
+		$skill = Skill::get();
+		$project = Project::get();
+		$data = [
+			'title' => 'Curiculum Vitae Luthfi Ihdalhusnayain',
+			'experience' => $experience,
+			'skill' => $skill,
+			'project' => $project
+		];
+
+		$html = $this->load->view('cv-pdf', $data, true);
+		$this->pdf->createPDF($html, $data['title'], false, 'A4', 'potrait');
+	}
+
 }

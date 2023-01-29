@@ -42,27 +42,25 @@
                </div>
                <div class="collapse navbar-collapse" id="sidebarCollapse">
                   <ul class="navbar-nav">
-                     <li class="nav-item"><a class="nav-link py-2 <?= $title == 'Dashboard' ? "active" : "" ?>" href="<?= base_url('dashboard') ?>"><i class="bi bi-house"></i> Dashboard</a></li>
-                     <li class="nav-item"><a class="nav-link py-2 <?= $title == 'Pengalaman' ? "active" : "" ?>" href="<?= base_url('experiences') ?>"><i class="bi bi-clock-history"></i> Pengalaman</a></li>
-                     <li class="nav-item"><a class="nav-link py-2 <?= $title == 'Keahlian' ? "active" : "" ?>" href="<?= base_url('skills') ?>"><i class="bi bi-stars"></i> Keahlian</a></li>
-                     <li class="nav-item"><a class="nav-link py-2 <?= $title == 'Projek' ? "active" : "" ?>" href="<?= base_url('projects') ?>"><i class="bi bi-briefcase"></i> Projek</a></li>
-                    <!--  <li class="nav-item"><a class="nav-link py-2 <?= $title == 'Siswa' ? "active" : "" ?>" href="<?= base_url('students') ?>"><i class="bi bi-people"></i> Siswa</a></li>
-                     <li class="nav-item"><a class="nav-link py-2 <?= $title == 'Kriteria' ? "active" : "" ?>" href="<?= base_url('criterias') ?>"><i class="bi bi-view-list"></i> Kriteria</a></li>
-                     <li class="nav-item"><a class="nav-link py-2 <?= $title == 'Crisp' ? "active" : "" ?>" href="<?= base_url('crisps') ?>"><i class="bi bi-view-list"></i> Data Crisp</a></li>
-                     <li class="nav-item"><a class="nav-link py-2 <?= $title == 'Alternatif' ? "active" : "" ?>" href="<?= base_url('alternatives') ?>"><i class="bi bi-briefcase"></i> Alternatif</a></li> -->
-                     <li class="nav-item"><a class="nav-link py-2 <?= $title == 'Pengguna' ? "active" : "" ?>" href="<?= base_url('users') ?>"><i class="bi bi-person-gear"></i> Pengguna</a></li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="#sidebar-projects" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebar-projects"><i class="bi bi-briefcase"></i> Projects</a>
-                        <div class="collapse" id="sidebar-projects">
-                           <ul class="nav nav-sm flex-column">
-                              <li class="nav-item"><a href="pages/projects/overview.html" class="nav-link">Overview</a></li>
-                              <li class="nav-item"><a href="pages/projects/grid-view.html" class="nav-link">Grid View</a></li>
-                              <li class="nav-item"><a href="pages/projects/table-view.html" class="nav-link">Table View</a></li>
-                              <li class="nav-item"><a href="pages/projects/details.html" class="nav-link">Details</a></li>
-                              <li class="nav-item"><a href="pages/projects/create-project.html" class="nav-link">Create Project</a></li>
-                           </ul>
-                        </div>
-                     </li>
+                     <?php foreach (getMenu() as $parent): ?>
+                        <?php if (count($parent->child) == 0): ?>
+                              <li class="nav-item"><a class="nav-link py-2" orihref="<?= encrypt_decrypt('encrypt', $parent->url) ?>" href="<?= base_url($parent->url) ?>"><i class="<?= $parent->icon ?>"></i> <?= $parent->title ?></a></li>
+                        <?php else: ?>
+                              <li class="nav-item">
+                                 <a class="nav-link" id="<?= encrypt_decrypt('encrypt', $parent->id) ?>"  href="#submenu-<?= encrypt_decrypt('encrypt', $parent->id) ?>" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="submenu-<?= encrypt_decrypt('encrypt', $parent->id) ?>"><i class="<?= $parent->icon ?>"></i> <?= $parent->title ?></a>
+                                 <div class="collapse" id="submenu-<?= encrypt_decrypt('encrypt', $parent->id) ?>">
+                                    <ul class="nav nav-sm flex-column">
+                                       <?php foreach ($parent->child as $child): ?>
+                                          <li class="nav-item"><a href="<?= base_url($child->url) ?>" 
+                                             orihref="<?= encrypt_decrypt('encrypt', $child->url) ?>"
+                                             parent="<?= encrypt_decrypt('encrypt', $parent->id) ?>"
+                                             class="nav-link"><?= $child->title ?></a></li>
+                                       <?php endforeach ?>
+                                    </ul>
+                                 </div>
+                              </li>                           
+                        <?php endif ?>
+                     <?php endforeach ?>
                   </ul>
                   <!-- <hr class="navbar-divider my-4 opacity-70">
                   <ul class="navbar-nav">
@@ -139,6 +137,25 @@
             $("#modal-delete").modal('show')
             $("#btn-submit-delete").attr('href', href);
 
+         }
+
+         // Get the current URL
+         var currentUrl = `<?= encrypt_decrypt('encrypt',$this->uri->segment(1))?>`;
+         // console.log(currentUrl)
+         // Select all menu items
+         var menuItems = $('.navbar-nav a');
+
+         var active = $(menuItems).filter(function() {
+             return $(this).attr('orihref') == currentUrl;
+         });
+
+         var parent_id = active.attr('parent');
+            $(`#${parent_id}`).addClass('active').siblings().removeClass('active')
+            $(`#submenu-${parent_id}`).addClass('show').siblings().removeClass('show')
+         if (parent_id) {
+            active.addClass('font-bold').siblings().removeClass('font-bold'); 
+         }else{
+            active.addClass('active').siblings().removeClass('active'); 
          }
     </script>
    </body>

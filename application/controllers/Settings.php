@@ -32,17 +32,6 @@ class Settings extends CI_Controller {
 		$setting = Setting::find($id);
 
 		$this->form_validation->set_rules('name', 'Nama Website', 'trim|xss_clean|required', messageError());
-		$this->form_validation->set_rules('email', 'Email', 'trim|xss_clean|required|valid_email', messageError());
-		$this->form_validation->set_rules('phone', 'No Telepon', 'trim|required|xss_clean|numeric', messageError());
-		$this->form_validation->set_rules('address', 'Alamat', 'trim|required|xss_clean', messageError());
-
-		$this->form_validation->set_rules('ig_name', 'Nama Instagram', 'trim', messageError());
-		$this->form_validation->set_rules('ig_link', 'Link Instagram', 'trim', messageError());
-		$this->form_validation->set_rules('fb_name', 'Nama Facebook', 'trim', messageError());
-		$this->form_validation->set_rules('fb_link', 'Link Facebook', 'trim', messageError());
-
-		$this->form_validation->set_rules('text_home', 'Text Home', 'trim', messageError());
-		$this->form_validation->set_rules('text_profile', 'Text Profile', 'trim', messageError());
 
 		$this->form_validation->set_rules('seo_tag[]', 'SEO Tag', 'trim', messageError());
 		$this->form_validation->set_rules('seo_description', 'SEO Deskripsi', 'trim', messageError());
@@ -57,18 +46,8 @@ class Settings extends CI_Controller {
 
 		if ($this->form_validation->run()) {
 			$setting->name = $request['name'];
-			$setting->email = $request['email'];
-			$setting->phone = $request['phone'];
-			$setting->address = $request['address'];
-			$setting->address_link = $request['address_link'];
-			$setting->ig_name = $request['ig_name'];
-			$setting->ig_link = $request['ig_link'];
-			$setting->fb_name = $request['fb_name'];
-			$setting->fb_link = $request['fb_link'];
 			$setting->seo_tag = implode(",", $request['seo_tag']);
 			$setting->seo_description = $request['seo_description'];
-			$setting->text_home = $request['text_home'];
-			$setting->text_profile = $request['text_profile'];
 
 			if ($_FILES['icon']['name'] != '') {
 				$icon = $setting->icon;

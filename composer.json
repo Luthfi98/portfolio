@@ -12,7 +12,8 @@
 	},
 	"require": {
 		"php": ">=7.3",
-		"illuminate/database": "^8.45"
+		"illuminate/database": "^8.45",
+		"dompdf/dompdf": "^2.0"
 	},
 	"suggest": {
 		"paragonie/random_compat": "Provides better randomness in PHP 7.x"

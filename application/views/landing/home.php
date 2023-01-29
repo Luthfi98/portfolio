@@ -1,6 +1,6 @@
 <!-- HOME START-->
 <section class="bg-home" style="background-color: #030d0f;" id="home">
-<!-- <section class="bg-home" style="background-color: #030d0f; background-image:url(<?= base_url('assets/landing/images/home/bg-personal.jpg')?>)" id="home"> -->
+<!-- <section class="bg-home" style="background-color: #030d0f; background-image:url(<?= base_url('uploads/profile.png')?>); background-size: 30%; background-repeat: no-repeat; background-position: right;" id="home"> -->
     <div class="home-center">
         <div class="home-desc-center">
             <div class="container">
@@ -9,10 +9,10 @@
                         <div class="title-heading">
                             <h1 class="text-white">Luthfi Ihdalhusnayain</h1>
                             <h2 class="text-white mb-4">Saya adalah seorang  <span class="element text-custom" data-elements=" <?= web()->seo_tag ?>"></span></h2>                                    
-                            <p class="text-light mx-auto"><?= web()->seo_description ?></p>
+                            <p class="text-light mx-auto"><?= web()->about ?></p>
                             <div class="mt-3">
-                                <a href="#" class="btn btn-custom-white mr-3">View Portfolio</a>
-                                <a href="#" class="btn btn-custom">Hire me</a>
+                                <a href="<?= base_url('show-cv') ?>" target="__BLANK" class="btn btn-custom-white mr-3">View Portfolio</a>
+                                <a href="https://wa.me/<?= preg_replace('/^0/', '62', web()->phone) ?>" target="__BLANK" class="btn btn-custom">Hire me</a>
                             </div>
                         </div>
                     </div><!--end col-->
@@ -41,7 +41,7 @@
                     <!-- <h3 class="f-22">Siapakah Saya ?</h3> -->
                     <div class="spacer-15"></div>
                     <p class="text-light text-justify">
-                        Saya adalah seorang Sarjana Teknik dari Universitas Ibn Khaldun Bogor, Saya telah terjun ke real project sejak semester 4, dan saya memfokuskan diri sebagai backend dan Web Developer.
+                        <?= web()->about ?>
                     </p>
                     <div class="about-personal">
                         <ul class="list-unstyled">
@@ -57,7 +57,7 @@
                         </ul>
                     </div>
                     <div class="mt-3">
-                        <a href="#" class="btn btn-custom">Download resume</a>
+                        <a href="<?= base_url('show-cv') ?>" target="__BLANK" class="btn btn-custom">Download resume</a>
                     </div>
                 </div>
             </div>
@@ -67,7 +67,7 @@
                     <h6>Keahlian</h6>
                     <!-- <h3 class="f-22">Kemampuan Saya</h3> -->
                     <div class="spacer-15"></div>
-                    <p class="text-light">Obviously I'M Web Designer. Web Developer with over 8 years of experience, making this the first true generator on the Internet.</p>
+                    <!-- <p class="text-light">Obviously I'M Web Designer. Web Developer with over 8 years of experience, making this the first true generator on the Internet.</p> -->
                     <div class="spacer-15"></div>                            
                 </div>
                 <div class="skills-progress">

@@ -24,6 +24,11 @@
                 <form class="settings-form" method="post" enctype="multipart/form-data" action="<?= base_url('settings/save') ?>">
                 	<h5>Informasi Website</h5>
                 	<hr>
+                   <div class="mb-3">
+                      <label for="name" class="form-label">Nama Website</label>
+                      <input type="text" class="form-control" id="name" value="<?= set_value('name', $setting->name) ?>" name="name" required>
+                      <?= isset($error['name']) ? $error['name'] : ''  ?>
+                  </div>
                 	<div class="row">
                 		<div class="col-lg-6 col-12">
             			    <div class="mb-3">
@@ -36,6 +41,8 @@
             				    <?= isset($error['icon']) ? $error['icon'] : ''  ?>
             			    </div>
 
+                		</div>
+                		<div class="col-lg-6 col-12">
             			    <div class="mb-3">
             			    	<label for="logo" class="form-label">Logo</label>
             			    	<div id="show-logo">
@@ -46,78 +53,8 @@
 
             			    </div>
                 		</div>
-                		<div class="col-lg-6 col-12">
-            			    <div class="mb-3">
-            				    <label for="name" class="form-label">Nama Website</label>
-            				    <input type="text" class="form-control" id="name" value="<?= set_value('name', $setting->name) ?>" name="name" required>
-            				    <?= isset($error['name']) ? $error['name'] : ''  ?>
-            				</div>
-            				<div class="row">
-            					<div class="mb-3 col-lg-6 col-12">
-            					    <label for="email" class="form-label">Email</label>
-            					    <input type="text" class="form-control" id="email" value="<?= set_value('email', $setting->email) ?>" name="email" required>
-            					    <?= isset($error['email']) ? $error['email'] : ''  ?>
-            					</div>
-            					<div class="mb-3 col-lg-6 col-12">
-            					    <label for="phone" class="form-label">No. Telepon</label>
-            					    <input type="text" class="form-control" id="phone" value="<?= set_value('phone', $setting->phone) ?>" name="phone" required>
-            					    <?= isset($error['phone']) ? $error['phone'] : ''  ?>
-            					</div>
-            				</div>
-            				<div class="mb-3">
-            				    <label for="address" class="form-label">Alamat</label>
-            				    <textarea class="form-control" id="address" name="address"><?= set_value('address', $setting->address) ?></textarea>
-            				    <br>
-            				    <?= $setting->address_link ?>
-            				    <?= isset($error['address']) ? $error['address'] : ''  ?>
-            				    <br>
-            				    <label for="address_link" class="form-label">Link Alamat</label>
-            				    <textarea class="form-control" id="address_link" name="address_link"><?= set_value('address_link', $setting->address_link) ?></textarea>
-            				</div>
-                		</div>
                 	</div>
-                	<h5>Sosial Media Website</h5>
-                	<hr>
-                	<div class="row">
-                		<div class="col-lg-6 col-12">
-                			<div class="mb-3">
-            				    <label for="ig_name" class="form-label">Nama Instagram</label>
-            				    <input type="text" class="form-control" id="ig_name" value="<?= set_value('ig_name', $setting->ig_name) ?>" name="ig_name" required>
-            				    <?= isset($error['ig_name']) ? $error['ig_name'] : ''  ?>
-            				</div>
-                		</div>
-                		<div class="col-lg-6 col-12">
-                			<div class="mb-3">
-            				    <label for="ig_link" class="form-label">Link Instagram 
-            				    	<?php if ($setting->ig_link): ?>
-            					    	<a href="<?= $setting->ig_link ?>" title="Kunjungi Link"><i class="bi bi-instagram"></i></a>
-            				    	<?php endif ?>
-            				    </label>
-            				    <input type="text" class="form-control" id="ig_link" value="<?= set_value('ig_link', $setting->ig_link) ?>" name="ig_link" required>
-            				    <?= isset($error['ig_link']) ? $error['ig_link'] : ''  ?>
-            				</div>
-                		</div>
-                	</div>
-                	<div class="row">
-                		<div class="col-lg-6 col-12">
-                			<div class="mb-3">
-            				    <label for="fb_name" class="form-label">Nama Facebook
-            				    	<?php if ($setting->fb_link): ?>
-            					    	<a href="<?= $setting->fb_link ?>" title="Kunjungi Link"><i class="bi bi-instagram"></i></a>
-            				    	<?php endif ?>
-            				    </label>
-            				    <input type="text" class="form-control" id="fb_name" value="<?= set_value('fb_name', $setting->fb_name) ?>" name="fb_name">
-            				    <?= isset($error['fb_name']) ? $error['fb_name'] : ''  ?>
-            				</div>
-                		</div>
-                		<div class="col-lg-6 col-12">
-                			<div class="mb-3">
-            				    <label for="fb_link" class="form-label">Link Facebook</label>
-            				    <input type="text" class="form-control" id="fb_link" value="<?= set_value('fb_link', $setting->fb_link) ?>" name="fb_link">
-            				    <?= isset($error['fb_link']) ? $error['fb_link'] : ''  ?>
-            				</div>
-                		</div>
-                	</div>
+      			   
                 	<h5>SEO Website</h5>
                 	<hr>
                 	<div class="row">
@@ -132,29 +69,9 @@
                 		<div class="col-lg-6 col-12">
                 			<div class="mb-3">
             				    <label for="seo_description" class="form-label">Deskripsi</label>
-            				    <textarea name="seo_description" id="seo_description" class="form-control"><?= set_value('seo_description', $setting->seo_description) ?></textarea>
+            				    <textarea name="seo_description" rows="5" id="seo_description" class="form-control"><?= set_value('seo_description', $setting->seo_description) ?></textarea>
             				    <?= isset($error['seo_description']) ? $error['seo_description'] : ''  ?>
             				</div>
-                		</div>
-                	</div>
-                	<h5>Landing Page</h5>
-                	<hr>
-                	<div class="row">
-                		<div class="col-lg-6 col-12">
-                			<div class="mb-3">
-                			    <label for="text_home" class="form-label">Text Home</label>
-                			    <textarea class="form-control" id="text_home" name="text_home"><?= set_value('text_home', $setting->text_home) ?></textarea>
-                			    
-                			    <?= isset($error['text_home']) ? $error['text_home'] : ''  ?>
-                			</div>
-                		</div>
-                		<div class="col-lg-6 col-12">
-                			<div class="mb-3">
-                			    <label for="text_profile" class="form-label">Text Profile</label>
-                			    <textarea class="form-control" id="text_profile" name="text_profile"><?= set_value('text_profile', $setting->text_profile) ?></textarea>
-                			    
-                			    <?= isset($error['text_profile']) ? $error['text_profile'] : ''  ?>
-                			</div>
                 		</div>
                 	</div>
             		<button type="submit" class="btn app-btn-primary" >Simpan</button>

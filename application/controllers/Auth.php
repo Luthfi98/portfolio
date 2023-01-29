@@ -69,7 +69,7 @@ class Auth extends CI_Controller {
 			'user'  => $user,
 		];
 
-		$this->template->load('templates/cms','cms/profile', $data,FALSE);
+		$this->template->load('templates/cms','cms/accounts', $data,FALSE);
 	}
 
 	function updateProfile()
@@ -80,7 +80,6 @@ class Auth extends CI_Controller {
 		}
 		
 		$request = $this->input->post();
-		// dd($request);
 		$user = user();
 
 		if ($request['password'] || $request['old'] || $request['conf']) {
@@ -108,8 +107,7 @@ class Auth extends CI_Controller {
 				redirect('account');
 				exit();
 			}
-
-			$cekUsername =  User::where('id', '!=', encrypt_decrypt('decrypt',$user->id))->where('username', $request['username'])->first()->username;
+			$cekUsername =  User::where('id', '!=',$user->id)->where('username', $request['username'])->first();
 			if ($cekUsername) {
 				danger('Username sudah tidak tersedia');
 				redirect('account');

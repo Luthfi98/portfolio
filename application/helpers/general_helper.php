@@ -1,4 +1,16 @@
 <?php 
+if (!function_exists('getMenu')) {
+	function getMenu()
+	{
+		$CI = &get_instance();
+
+		return Menu::with(['child' => function($query) {
+			$query->orderBy('sort', 'asc');
+		}])->whereNull('parent_id')->orderBy('sort', 'asc')->get();
+	}
+}
+
+
 if (!function_exists('getErrorValidation')) {
 	function getErrorValidation()
 	{
@@ -279,7 +291,10 @@ if (!function_exists('info')) {
 if (!function_exists('web')) {
 	function web()
 	{
-		return Setting::first();
+		$web = Setting::first();
+		$profile = Profile::first();
+		$data = (object) array_merge($web->toArray(), $profile->toArray());
+		return $data;
 	}
 }
 
