@@ -44,7 +44,7 @@
                      <td><?= $value->name ?></td>
                      <td><?= $value->level ?></td>
                      <td>
-                        <a class="btn btn-neutral text-info btn-sm" href="<?= base_url('skills/show/'.encrypt_decrypt('encrypt',$value->id)) ?>"><i class="bi bi-eye"></i> </a>
+                        <!-- <a class="btn btn-neutral text-info btn-sm" href="<?= base_url('skills/show/'.encrypt_decrypt('encrypt',$value->id)) ?>"><i class="bi bi-eye"></i> </a> -->
                         <a class="btn btn-neutral text-warning btn-sm" href="<?= base_url('skills/edit/'.encrypt_decrypt('encrypt',$value->id)) ?>"><i class="bi bi-pencil"></i> </a>
                         <a class="btn btn-neutral text-danger btn-sm" href="javascript:;" onclick="showModalDelete(this)" data-href="<?= base_url('skills/destroy/'.encrypt_decrypt('encrypt',$value->id)) ?>"><i class="bi bi-trash"></i></a>
                      </td>

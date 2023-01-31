@@ -22,7 +22,7 @@ class Experiences extends CI_Controller {
 			'breadcrumb' => 'List Pengalaman',
 			'experience'  => $experience,
 		];
-		$this->template->load('templates/cms','cms/experience', $data,FALSE);
+		$this->template->load('templates/cms','cms/experiences/index', $data,FALSE);
 	}
 
 	function show($id)
@@ -41,7 +41,7 @@ class Experiences extends CI_Controller {
 		];
 
 
-		$this->template->load('templates/cms','cms/experience-show', $data,FALSE);
+		$this->template->load('templates/cms','cms/experiences/show', $data,FALSE);
 	}
 
 	public function create()
@@ -51,7 +51,7 @@ class Experiences extends CI_Controller {
 			'breadcrumb' => 'Tambah Data Pengalaman',
 		];
 
-		$this->template->load('templates/cms','cms/experience-create', $data,FALSE);
+		$this->template->load('templates/cms','cms/experiences/create', $data,FALSE);
 	}
 
 	public function store()
@@ -103,7 +103,7 @@ class Experiences extends CI_Controller {
 			'experience' => $experience
 		];
 
-		$this->template->load('templates/cms','cms/experience-edit', $data,FALSE);
+		$this->template->load('templates/cms','cms/experiences/edit', $data,FALSE);
 
 	}
 

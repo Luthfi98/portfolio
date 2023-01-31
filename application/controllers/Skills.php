@@ -22,7 +22,7 @@ class Skills extends CI_Controller {
 			'breadcrumb' => 'List Pengalaman',
 			'skill'  => $skill,
 		];
-		$this->template->load('templates/cms','cms/skill', $data,FALSE);
+		$this->template->load('templates/cms','cms/skills/index', $data,FALSE);
 	}
 
 	function show($id)
@@ -41,7 +41,7 @@ class Skills extends CI_Controller {
 		];
 
 
-		$this->template->load('templates/cms','cms/skill-show', $data,FALSE);
+		$this->template->load('templates/cms','cms/skills/show', $data,FALSE);
 	}
 
 	public function create()
@@ -52,7 +52,7 @@ class Skills extends CI_Controller {
 			'level' => Skill::groupBy('level')->get(['level'])
 		];
 
-		$this->template->load('templates/cms','cms/skill-create', $data,FALSE);
+		$this->template->load('templates/cms','cms/skills/create', $data,FALSE);
 	}
 
 	public function store()
@@ -103,7 +103,7 @@ class Skills extends CI_Controller {
 			
 		];
 
-		$this->template->load('templates/cms','cms/skill-edit', $data,FALSE);
+		$this->template->load('templates/cms','cms/skills/edit', $data,FALSE);
 
 	}
 

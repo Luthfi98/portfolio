@@ -21,7 +21,7 @@ class Menus extends CI_Controller {
 			'breadcrumb' => 'List Menu',
 			'menu'  => $menu,
 		];
-		$this->template->load('templates/cms','cms/menus', $data,FALSE);
+		$this->template->load('templates/cms','cms/menus/index', $data,FALSE);
 	}
 
 	function show($id)
@@ -40,7 +40,7 @@ class Menus extends CI_Controller {
 		];
 
 
-		$this->template->load('templates/cms','cms/menus-show', $data,FALSE);
+		$this->template->load('templates/cms','cms/menus/show', $data,FALSE);
 	}
 
 	public function create()
@@ -51,7 +51,7 @@ class Menus extends CI_Controller {
 			'parent' => Menu::get()
 		];
 
-		$this->template->load('templates/cms','cms/menus-create', $data,FALSE);
+		$this->template->load('templates/cms','cms/menus/create', $data,FALSE);
 	}
 
 	public function store()
@@ -106,7 +106,7 @@ class Menus extends CI_Controller {
 
 		];
 
-		$this->template->load('templates/cms','cms/menus-edit', $data,FALSE);
+		$this->template->load('templates/cms','cms/menus/edit', $data,FALSE);
 
 	}
 

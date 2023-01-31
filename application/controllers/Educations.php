@@ -22,7 +22,7 @@ class Educations extends CI_Controller {
 			'breadcrumb' => 'List Riwayat Pendidikan',
 			'education'  => $education,
 		];
-		$this->template->load('templates/cms','cms/educations', $data,FALSE);
+		$this->template->load('templates/cms','cms/educations/index', $data,FALSE);
 	}
 
 	function show($id)
@@ -41,7 +41,7 @@ class Educations extends CI_Controller {
 		];
 
 
-		$this->template->load('templates/cms','cms/educations-show', $data,FALSE);
+		$this->template->load('templates/cms','cms/educations/show', $data,FALSE);
 	}
 
 	public function create()
@@ -51,7 +51,7 @@ class Educations extends CI_Controller {
 			'breadcrumb' => 'Tambah Data Riwayat Pendidikan',
 		];
 
-		$this->template->load('templates/cms','cms/educations-create', $data,FALSE);
+		$this->template->load('templates/cms','cms/educations/create', $data,FALSE);
 	}
 
 	public function store()
@@ -108,7 +108,7 @@ class Educations extends CI_Controller {
 			'education' => $education
 		];
 
-		$this->template->load('templates/cms','cms/educations-edit', $data,FALSE);
+		$this->template->load('templates/cms','cms/educations/edit', $data,FALSE);
 
 	}
 

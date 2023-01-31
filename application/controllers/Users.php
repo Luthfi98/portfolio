@@ -22,7 +22,7 @@ class Users extends CI_Controller {
 			'users'  => $users,
 		];
 
-		$this->template->load('templates/cms','cms/users', $data,FALSE);
+		$this->template->load('templates/cms','cms/users/index', $data,FALSE);
 	}
 
 	function show($id)
@@ -40,7 +40,7 @@ class Users extends CI_Controller {
 			'user' => $users
 		];
 
-		$this->template->load('templates/cms','cms/users-show', $data,FALSE);
+		$this->template->load('templates/cms','cms/users/show', $data,FALSE);
 	}
 
 	public function create()
@@ -50,7 +50,7 @@ class Users extends CI_Controller {
 			'breadcrumb' => 'Tambah Data Pengguna',
 		];
 
-		$this->template->load('templates/cms','cms/users-create', $data,FALSE);
+		$this->template->load('templates/cms','cms/users/create', $data,FALSE);
 	}
 
 	public function store()
@@ -102,7 +102,7 @@ class Users extends CI_Controller {
 			'users' => $users
 		];
 
-		$this->template->load('templates/cms','cms/users-edit', $data,FALSE);
+		$this->template->load('templates/cms','cms/users/edit', $data,FALSE);
 
 	}
 

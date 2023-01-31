@@ -22,7 +22,7 @@ class Projects extends CI_Controller {
 			'breadcrumb' => 'List Projek',
 			'project'  => $project,
 		];
-		$this->template->load('templates/cms','cms/project', $data,FALSE);
+		$this->template->load('templates/cms','cms/projects/index', $data,FALSE);
 	}
 
 	function show($id)
@@ -41,7 +41,7 @@ class Projects extends CI_Controller {
 		];
 
 
-		$this->template->load('templates/cms','cms/project-show', $data,FALSE);
+		$this->template->load('templates/cms','cms/projects/show', $data,FALSE);
 	}
 
 	public function create()
@@ -52,7 +52,7 @@ class Projects extends CI_Controller {
 			'type' => Project::groupBy('type')->get(['type'])
 		];
 
-		$this->template->load('templates/cms','cms/project-create', $data,FALSE);
+		$this->template->load('templates/cms','cms/projects/create', $data,FALSE);
 	}
 
 	public function store()
@@ -115,7 +115,7 @@ class Projects extends CI_Controller {
 			'type' => Project::groupBy('type')->get(['type'])
 		];
 
-		$this->template->load('templates/cms','cms/project-edit', $data,FALSE);
+		$this->template->load('templates/cms','cms/projects/edit', $data,FALSE);
 
 	}
 
