@@ -17,7 +17,7 @@ class Logs extends CI_Controller {
 		$data = [
 			'title' => 'Akses Log',
 			'breadcrumb' => 'Akses Log',
-			'logs' => AccessLog::all()
+			'logs' => AccessLog::orderBy('id', 'DESC')->all()
 		];
 		$this->template->load('templates/cms','cms/logs/index', $data,FALSE);
 	}
