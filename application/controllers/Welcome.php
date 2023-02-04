@@ -7,6 +7,7 @@ class Welcome extends CI_Controller {
 	{
 		parent::__construct();
 		countVisitor();
+		$this->output->cache(1440);
 	}
 
 	public function index()
@@ -46,12 +47,14 @@ class Welcome extends CI_Controller {
 		$skill = Skill::get();
 		$project = Project::get();
 		$education = Education::get();
+		$sosmed = SosmedAccount::with('sosmed')->get();
 		$data = [
 			'title' => 'Curiculum Vitae Luthfi Ihdalhusnayain',
 			'experience' => $experience,
 			'skill' => $skill,
 			'project' => $project,
 			'education' => $education,
+			'sosmed' => $sosmed
 		];
 
 		$html = $this->load->view('cv-pdf', $data, true);

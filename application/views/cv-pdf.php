@@ -31,10 +31,29 @@
 			 list-style-type: disc;
 		    margin-left: 20px;
 		}
+
+		.footer {
+			font-size: 12px;
+	        position: fixed;
+	        bottom: -50;
+	        width: 100%;
+	        height: 50px;
+/*	        background-color: #f5f5f5;*/
+	        text-align: center;
+	        line-height: 20px;
+	      }
+	      a {
+	      	color: black;text-decoration: none; cursor: pointer;
+	      }
     </style>
 </head>
 
 <body>
+	<div class="footer">
+		<?php foreach ($sosmed as $value): ?>
+			<a href="<?= $value->link ?>" target="__BLANK" title="Kunjungi <?= $value->sosmed->name ?>"><?= $value->sosmed->name ?></a>
+		<?php endforeach ?>
+    </div>
 	<table width="100%" cellspacing="0">
 		<tr>
 			<td style="text-align: center;">
@@ -131,5 +150,6 @@
 		</tr>
 		<?php endforeach ?>
 	</table>
+
 </body>
 </html>
