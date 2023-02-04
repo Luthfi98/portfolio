@@ -22,11 +22,10 @@ class Dashboard extends CI_Controller {
 			'project'  => Project::count(),
 			'user'  => User::count(),
 			'day'  => Visitor::whereDate('date', date("Y-m-d"))->count(),
-			'month' => Visitor::whereMonth('date', date('m'))->groupBy('ip')->count(),
-			'year' => Visitor::whereYear('date', date('Y'))->groupBy('ip')->count(),
+			'month' => Visitor::whereMonth('date', date('m'))->count(),
+			'year' => Visitor::whereYear('date', date('Y'))->count(),
 			'lists' => []
 		];
-
 		$this->template->load('templates/cms','cms/dashboard', $data,FALSE);
 	}
 
