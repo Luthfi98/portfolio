@@ -17,7 +17,7 @@ class Visitors extends CI_Controller {
 		$data = [
 			'title' => 'Pengunjung Website',
 			'breadcrumb' => 'Pengunjung Website',
-			'visitor' => Visitor::orderBy('id', 'DESC')->all()
+			'visitor' => Visitor::orderBy('id', 'DESC')->get()
 		];
 		$this->template->load('templates/cms','cms/visitors/index', $data,FALSE);
 	}
