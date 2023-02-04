@@ -20,7 +20,7 @@
       <?php if (count($sosmed)): ?>
          <div class="row justify-content-center">
          <?php foreach ($sosmed as $value): ?>
-               <div class="card col-xl-2 col-lg-3 col-md-4 col-12 m-2">
+               <div class="card col-xl-4 col-lg-4 col-md-6 col-12 m-2">
                   <div class="card-body">
                      <a href="<?= $value->link ?>" target="__BLANK" title="<?= $value->name ?>">
                         <b>
