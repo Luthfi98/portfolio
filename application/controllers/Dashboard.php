@@ -17,10 +17,13 @@ class Dashboard extends CI_Controller {
 		$data = [
 			'title' => 'Dashboard',
 			'breadcrumb' => 'Dashboard',
-			'user'  => 0,
-			'criteria'  => 0,
-			'alternative'  => 0,
-			'student'  => 0,
+			'skill'  => Skill::count(),
+			'experience'  => Experience::count(),
+			'project'  => Project::count(),
+			'user'  => User::count(),
+			'day'  => Visitor::whereDate('date', date("Y-m-d"))->count(),
+			'month' => Visitor::whereMonth('date', date('m'))->groupBy('ip')->count(),
+			'year' => Visitor::whereYear('date', date('Y'))->groupBy('ip')->count(),
 			'lists' => []
 		];
 

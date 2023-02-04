@@ -17,7 +17,7 @@
             <div class="card">
                <div class="card-body">
                   <div class="row">
-                     <div class="col"><span class="h6 font-semibold text-muted text-sm d-block mb-2">Kriteria</span> <span class="h3 font-bold mb-0"><?= $criteria ?></span></div>
+                     <div class="col"><span class="h6 font-semibold text-muted text-sm d-block mb-2">Keahlian</span> <span class="h3 font-bold mb-0"><?= $skill ?></span></div>
                      <div class="col-auto">
                         <div class="icon icon-shape bg-tertiary text-white text-lg rounded-circle"><i class="bi bi-view-list"></i></div>
                      </div>
@@ -29,7 +29,7 @@
             <div class="card">
                <div class="card-body">
                   <div class="row">
-                     <div class="col"><span class="h6 font-semibold text-muted text-sm d-block mb-2">Alternatif</span> <span class="h3 font-bold mb-0"><?= $alternative ?></span></div>
+                     <div class="col"><span class="h6 font-semibold text-muted text-sm d-block mb-2">Pengalaman Kerja</span> <span class="h3 font-bold mb-0"><?= $experience ?></span></div>
                      <div class="col-auto">
                         <div class="icon icon-shape bg-primary text-white text-lg rounded-circle"><i class="bi bi-view-list"></i></div>
                      </div>
@@ -41,7 +41,7 @@
             <div class="card">
                <div class="card-body">
                   <div class="row">
-                     <div class="col"><span class="h6 font-semibold text-muted text-sm d-block mb-2">Siswa</span> <span class="h3 font-bold mb-0"><?= $student ?></span></div>
+                     <div class="col"><span class="h6 font-semibold text-muted text-sm d-block mb-2">Projek</span> <span class="h3 font-bold mb-0"><?= $project ?></span></div>
                      <div class="col-auto">
                         <div class="icon icon-shape bg-info text-white text-lg rounded-circle"><i class="bi bi-people"></i></div>
                      </div>
@@ -56,6 +56,43 @@
                      <div class="col"><span class="h6 font-semibold text-muted text-sm d-block mb-2">User</span> <span class="h3 font-bold mb-0"><?= $user ?></span></div>
                      <div class="col-auto">
                         <div class="icon icon-shape bg-warning text-white text-lg rounded-circle"><i class="bi bi-person-gear"></i></div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <div class="col-xl-3 col-sm-6 col-12">
+            <div class="card">
+               <div class="card-body">
+                  <div class="row">
+                     <div class="col"><span class="h6 font-semibold text-muted text-sm d-block mb-2">Pengunjung Harian</span> <span class="h3 font-bold mb-0"><?= $day ?></span></div>
+                     <div class="col-auto">
+                        <div class="icon icon-shape bg-info text-white text-lg rounded-circle"><i class="bi bi-people"></i></div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-xl-3 col-sm-6 col-12">
+            <div class="card">
+               <div class="card-body">
+                  <div class="row">
+                     <div class="col"><span class="h6 font-semibold text-muted text-sm d-block mb-2">Pengunjung Bulanan</span> <span class="h3 font-bold mb-0"><?= $month ?></span></div>
+                     <div class="col-auto">
+                        <div class="icon icon-shape bg-info text-white text-lg rounded-circle"><i class="bi bi-people"></i></div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-xl-3 col-sm-6 col-12">
+            <div class="card">
+               <div class="card-body">
+                  <div class="row">
+                     <div class="col"><span class="h6 font-semibold text-muted text-sm d-block mb-2">Pengunjung Tahunan</span> <span class="h3 font-bold mb-0"><?= $year ?></span></div>
+                     <div class="col-auto">
+                        <div class="icon icon-shape bg-info text-white text-lg rounded-circle"><i class="bi bi-people"></i></div>
                      </div>
                   </div>
                </div>

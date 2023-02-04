@@ -18,6 +18,9 @@
      <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap5.min.css">
      <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js" type="text/javascript" charset="utf-8"></script>
      <script src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js" type="text/javascript" charset="utf-8"></script>
+     <script>
+        var base_url = `<?= base_url()?>`;
+     </script>
    </head>
    <body>
       <div class="d-flex flex-column flex-lg-row h-lg-full bg-surface-secondary">

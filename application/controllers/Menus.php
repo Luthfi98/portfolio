@@ -16,10 +16,16 @@ class Menus extends CI_Controller {
 	{
 
 		$menu = Menu::with('parent')->get();
+		$sorting = Menu::with(['child' => function($query){
+					$query->orderBy('sort', 'asc');
+				}])
+		->orderBy('sort', 'asc')
+		->where('parent_id', null)->get();
 		$data = [
 			'title' => 'Menu',
 			'breadcrumb' => 'List Menu',
 			'menu'  => $menu,
+			'sorting'  => $sorting,
 		];
 		$this->template->load('templates/cms','cms/menus/index', $data,FALSE);
 	}
@@ -164,6 +170,31 @@ class Menus extends CI_Controller {
 
 		success('Berhasil menghapus data menu');
 		redirect(base_url('menus'),'refresh');
+	}
+
+
+	function sorting()
+	{
+		$request = $this->input->post();
+
+		$sort = 1;
+		foreach ($request['data'] as $value) {
+			$menu = Menu::find(encrypt_decrypt('decrypt', $value['id']));
+			$menu->sort = $sort++;
+			$menu->save();
+
+			$sort1 = 1;
+			if (isset($value['children'])) {
+				foreach ($value['children'] as $value1) {
+					$menu = Menu::find(encrypt_decrypt('decrypt', $value1['id']));
+					$menu->sort = $sort1++;
+					$menu->save();
+				}
+				
+			}
+		}
+
+		echo json_encode(true);
 	}
 
 }

@@ -13,6 +13,7 @@ class Menu extends Eloquent{
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
+   
     public function child()
     {
         // hasMany(RelatedModel, foreignKeyOnRelatedModel = menu_id, localKey = id)

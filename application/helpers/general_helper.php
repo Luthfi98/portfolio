@@ -299,26 +299,64 @@ if (!function_exists('web')) {
 }
 
 
-if (!function_exists('child')) {
-	function child($child)
+if (!function_exists('countVisitor')) {
+	function countVisitor()
 	{
-		foreach ($child as $value) {
-			if ($value->disease) {
-				echo "
-					<li> <code>".$value->disease->code."</code> </li>
-				";
-			}
-				echo "
-				
-					<li> <code>".$value->symptom->code."</code> 
-						<ul>
-							".child($value->child)."
-						</ul>
-					</li>
-				";
+		
+		$ci = get_instance();
+		$ip    = $ci->input->ip_address(); // Mendapatkan IP user
+		$date  = date("Y-m-d"); // Mendapatkan tanggal sekarang
+		$waktu = time(); //
+		$timeinsert = date("Y-m-d H:i:s");
+		  
+		// Cek berdasarkan IP, apakah user sudah pernah mengakses hari ini
+		$ss = Visitor::where(['ip' => $ip, 'date' => $date]);
+		  
+		 
+		// Kalau belum ada, simpan data user tersebut ke database
+		if($ss->count() == 0){
+			$visitor = new Visitor;
+			$visitor->ip = $ip;
+			$visitor->date = $date;
+			$visitor->hits = 1;
+			$visitor->online = $waktu;
+			$visitor->save();
+		}else{
+			$ss = $ss->first();
+			$ss->hits = $ss->hits+1;
+			$ss->online = $waktu;
+			$ss->save();
 		}
+		 
+		  
+		// $pengunjunghariini  = $ci->db->query("SELECT * FROM pengunjung WHERE date='".$date."' GROUP BY ip")->num_rows(); // Hitung jumlah pengunjung
+		 
+		// $dbpengunjung = $ci->db->query("SELECT COUNT(hits) as hits FROM pengunjung")->row(); 
+		 
+		// $totalpengunjung = isset($dbpengunjung->hits)?($dbpengunjung->hits):0; // hitung total pengunjung
+		 
+		// $bataswaktu = time() - 300;
+		 
+		// $pengunjungonline  = $ci->db->query("SELECT * FROM pengunjung WHERE online > '".$bataswaktu."'")->num_rows(); // hitung pengunjung online
+		  
+		 
+		// $data = [
+		// 	'pengunjunghariini' => $pengunjunghariini,
+		// 	'pengunjungonline' => $pengunjungonline,
+		// 	'totalpengunjung' => $totalpengunjung
+		// ];
+		// return $data;
 	}
 }
+
+if (!function_exists('countDay')) {
+	function countDay()
+	{
+		$hari = cal_days_in_month(CAL_GREGORIAN, date('m'), date('Y'));
+		return $hari;
+	}
+}
+
 
 
 

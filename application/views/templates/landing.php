@@ -1,4 +1,4 @@
-
+<?php countVisitor() ?>
 <!DOCTYPE html>
     <html lang="en">
 <head>
