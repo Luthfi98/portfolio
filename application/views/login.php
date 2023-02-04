@@ -32,6 +32,7 @@
                            <form class="auth-form login-form" method="POST">         
                               <div class="email mb-3">
                                  <label class="sr-only" for="username">Username</label>
+                                  <input type="hidden" name="<?= $this->security->get_csrf_token_name();?>" value="<?= $this->security->get_csrf_hash();?>" />
                                  <input id="username" name="username" value="<?= set_value('username') ?>" type="text" class="form-control username" placeholder="Username" required="required">
                               </div><!--//form-group-->
                               <div class="password mb-3">

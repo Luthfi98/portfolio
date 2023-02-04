@@ -22,6 +22,7 @@
              <form method="post" action="<?= base_url('experiences/update/'.encrypt_decrypt('encrypt', $experience->id)) ?>">
                 <div class="mb-3">
                    <label for="office" class="form-label">Nama Perusahaan</label>
+                   <input type="hidden" name="<?= $this->security->get_csrf_token_name();?>" value="<?= $this->security->get_csrf_hash();?>" />
                    <input type="text" class="form-control" id="office" value="<?= set_value('office', $experience->office) ?>" name="office" required placeholder="">
                    <?= isset($error['office']) ? $error['office'] : ''  ?>
                </div>

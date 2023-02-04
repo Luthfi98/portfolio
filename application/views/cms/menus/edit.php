@@ -32,6 +32,7 @@
 
                 <div class="mb-3">
                    <label for="title" class="form-label">Nama Menu</label>
+                   <input type="hidden" name="<?= $this->security->get_csrf_token_name();?>" value="<?= $this->security->get_csrf_hash();?>" />
                    <input type="text" class="form-control" id="title" value="<?= set_value('title', $menu->title) ?>" name="title" required placeholder="">
                    <?= isset($error['title']) ? $error['title'] : ''  ?>
                </div>

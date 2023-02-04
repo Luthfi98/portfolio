@@ -37,9 +37,11 @@
                         <div class="avatar-parent-child"><img alt="..." src="<?= base_url('assets') ?>/img/people/img-profile.jpg" class="avatar avatar- rounded-circle"> <span class="avatar-child avatar-badge bg-success"></span></div>
                      </a>
                      <div class="dropdown-menu dropdown-menu-end" aria-labelledby="sidebarAvatar">
-                        <a href="#" class="dropdown-item">Profile</a> <a href="#" class="dropdown-item">Settings</a> <a href="#" class="dropdown-item">Billing</a>
-                        <hr class="dropdown-divider">
-                        <a href="#" class="dropdown-item">Logout</a>
+                        <div class="dropdown-header"><span class="d-block text-sm text-muted mb-1">Masuk Sebagai :  </span> <span class="d-block text-heading font-semibold"><?= user()->fullname ?></span></div>
+                              <div class="dropdown-divider"></div>
+                              <a class="dropdown-item" href="<?= base_url('account') ?>"><i class="bi bi-person"></i> Akun</a>
+                              <div class="dropdown-divider"></div>
+                              <a class="dropdown-item" href="<?= base_url('logout') ?>"><i class="bi bi-box-arrow-in-left"></i> Keluar</a>
                      </div>
                   </div>
                </div>

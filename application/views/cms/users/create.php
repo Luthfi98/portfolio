@@ -21,6 +21,7 @@
             <form class="settings-form" method="post" action="<?= base_url('users/store') ?>">
 			    <div class="mb-3">
 				    <label for="fullname" class="form-label">Nama Lengkap</label>
+                <input type="hidden" name="<?= $this->security->get_csrf_token_name();?>" value="<?= $this->security->get_csrf_hash();?>" />
 				    <input type="text" class="form-control" id="fullname" value="<?= set_value('fullname') ?>" name="fullname" required placeholder="John Doe">
 				    <?= isset($error['fullname']) ? $error['fullname'] : ''  ?>
 				</div>

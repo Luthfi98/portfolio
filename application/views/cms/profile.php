@@ -30,6 +30,7 @@
                            <div class="col-12 mb-3">
                               <div class="item-label"><strong>Nama Lengkap</strong></div>
                               <div class="item-data">
+                               <input type="hidden" name="<?= $this->security->get_csrf_token_name();?>" value="<?= $this->security->get_csrf_hash();?>" />
                                  <input type="hidden" name="id"id="id" value="<?= $profile ? encrypt_decrypt('encrypt', $profile->id) : '' ?>">
                                  <input type="text" name="name" required id="name" class="form-control" value="<?= set_value('name',  $profile ? $profile->name : '') ?>">
                               </div>

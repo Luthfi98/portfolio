@@ -21,6 +21,7 @@
             <form method="post" action="<?= base_url('skills/store') ?>">
                 <div class="mb-3">
                    <label for="name" class="form-label">Nama Kemampuan</label>
+                   <input type="hidden" name="<?= $this->security->get_csrf_token_name();?>" value="<?= $this->security->get_csrf_hash();?>" />
                    <input type="text" class="form-control" id="name" value="<?= set_value('name') ?>" name="name" required placeholder="">
                    <?= isset($error['name']) ? $error['name'] : ''  ?>
                </div>

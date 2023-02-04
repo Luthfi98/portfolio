@@ -26,6 +26,7 @@
                 	<hr>
                    <div class="mb-3">
                       <label for="name" class="form-label">Nama Website</label>
+                   <input type="hidden" name="<?= $this->security->get_csrf_token_name();?>" value="<?= $this->security->get_csrf_hash();?>" />
                       <input type="text" class="form-control" id="name" value="<?= set_value('name', $setting->name) ?>" name="name" required>
                       <?= isset($error['name']) ? $error['name'] : ''  ?>
                   </div>

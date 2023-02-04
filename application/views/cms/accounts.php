@@ -39,6 +39,7 @@
          						</div><!--//col-->
          					</div><!--//row-->
       						<form action="<?= base_url('update-account') ?>" method="post">
+                   <input type="hidden" name="<?= $this->security->get_csrf_token_name();?>" value="<?= $this->security->get_csrf_hash();?>" />
       						<div class="item border-bottom py-3">
       							<div class="row justify-content-between align-items-center">
       								<div class="col-12">
@@ -85,6 +86,7 @@
                         </div><!--//row-->
          					<form action="<?= base_url('update-profile') ?>" method="post">
          					<div class="item border-bottom py-3">
+                   <input type="hidden" name="<?= $this->security->get_csrf_token_name();?>" value="<?= $this->security->get_csrf_hash();?>" />
          						<div class="row justify-content-between align-items-center">
          							<div class="col-12">
          								<div class="item-label"><strong>Password Lama</strong></div>

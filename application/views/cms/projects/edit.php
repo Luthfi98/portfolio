@@ -21,6 +21,7 @@
             <form method="post" action="<?= base_url('projects/update/'.encrypt_decrypt('encrypt', $project->id)) ?>" enctype="multipart/form-data">
                 <div class="mb-3">
                    <label for="title" class="form-label">Nama Projek</label>
+                   <input type="hidden" name="<?= $this->security->get_csrf_token_name();?>" value="<?= $this->security->get_csrf_hash();?>" />
                    <input type="text" class="form-control" id="title" value="<?= set_value('title', $project->title) ?>" name="title" required placeholder="">
                    <?= isset($error['title']) ? $error['title'] : ''  ?>
                </div>
