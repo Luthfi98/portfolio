@@ -327,6 +327,25 @@ if (!function_exists('countVisitor')) {
 			$ss->online = $waktu;
 			$ss->save();
 		}
+		$ci->load->library('user_agent');
+		$segs = $ci->uri->segment_array();
+		$totalSegs = count($segs);
+		$link = base_url();
+		if ($segs) {
+			for ($i = 1; $i <= $totalSegs; $i++) {
+			    if ($segs[$i] === $segs[$totalSegs]) {
+			        $link .= $segs[$i];
+			    } else {
+			        $link .= $segs[$i] . "/";
+			    }
+			}
+		}
+
+		$logs = new AccessLog;
+		$logs->ip = $ip;
+		$logs->url = $link;
+		$logs->platform = $ci->agent->platform();
+		$logs->save();
 		 
 		  
 		// $pengunjunghariini  = $ci->db->query("SELECT * FROM pengunjung WHERE date='".$date."' GROUP BY ip")->num_rows(); // Hitung jumlah pengunjung
