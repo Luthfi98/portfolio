@@ -101,31 +101,24 @@
       </div>
       <div class="card">
          <div class="card-header border-bottom">
-            <h5 class="mb-0">List Rekomendasi</h5>
+            <h5 class="mb-0">Log Akses</h5>
          </div>
          <div class="table-responsive">
             <table class="table table-hover table-nowrap">
                <thead class="table-light">
                   <tr>
-                     <th scope="col">Nama Siswa</th>
-                     <th scope="col">Rekomendasi</th>
-                     <th scope="col">Nilai</th>
+                     <th scope="col">IP</th>
+                     <th scope="col">URL</th>
+                     <th scope="col">Platform</th>
                   </tr>
                </thead>
                <tbody>
-                  <?php if (count($lists)): ?>
-                     <?php foreach ($lists as $value): ?>
+                  <?php if (count($logs)): ?>
+                     <?php foreach ($logs as $value): ?>
                         <tr>
-                           <td>
-                              <a class="text-heading font-semibold" href="<?= base_url('students/show/'.encrypt_decrypt('encrypt', $value['student_id'])) ?>">
-                                 <?= $value['student']['nis'] ?> - 
-                                 <?= $value['student']['name'] ?>
-                                    
-                              </a>
-                           </td>
-                           <td><?= $value['alternative']['name'] ?></td>
-                           <td><span class="badge badge-lg badge-dot">
-                              <?= $value['value'] ?></span></td>
+                           <td><?= $value->ip ?></td>
+                           <td><?= $value->url ?></td>
+                           <td><?= $value->platform ?></td>
                         </tr>
                      <?php endforeach ?>
                   <?php else: ?>

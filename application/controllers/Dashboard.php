@@ -24,7 +24,7 @@ class Dashboard extends CI_Controller {
 			'day'  => Visitor::whereDate('date', date("Y-m-d"))->count(),
 			'month' => Visitor::whereMonth('date', date('m'))->count(),
 			'year' => Visitor::whereYear('date', date('Y'))->count(),
-			'lists' => []
+			'logs' => AccessLog::limit(10)->get()
 		];
 		$this->template->load('templates/cms','cms/dashboard', $data,FALSE);
 	}
