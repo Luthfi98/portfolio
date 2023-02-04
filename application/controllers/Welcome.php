@@ -12,6 +12,7 @@ class Welcome extends CI_Controller {
 
 	public function index()
 	{
+		$this->db->cache_on();
 		$experience = Experience::orderBy('start_at', 'DESC')->get();
 		$skill = Skill::get();
 		$project = Project::limit(6)->get();
@@ -22,14 +23,17 @@ class Welcome extends CI_Controller {
 			'project' => $project,
 			'type' => Project::groupBy('type')->get(['type'])
 		];
+		$this->db->cache_off();
 		$this->template->load('templates/landing','landing/home', $data,FALSE);
 	}
 
 	function project($slug)
 	{
+		$this->db->cache_on();
 		$project = Project::where('slug', $slug)->first();
 		$projects = Project::where('id', '!=', $project->id)->limit(3)->get();
 		$type = Project::groupBy('type')->get(['type']);
+		$this->db->cache_off();
 		$data = [
 			'title' => $project->title,
 			'project' => $project,
@@ -42,12 +46,14 @@ class Welcome extends CI_Controller {
 	public function cv()
 	{
 		$this->load->library('Pdf');
+		$this->db->cache_on();
 		
 		$experience = Experience::orderBy('start_at', 'DESC')->get();
 		$skill = Skill::get();
 		$project = Project::get();
 		$education = Education::get();
 		$sosmed = SosmedAccount::with('sosmed')->get();
+		$this->db->cache_off();
 		$data = [
 			'title' => 'Curiculum Vitae Luthfi Ihdalhusnayain',
 			'experience' => $experience,
