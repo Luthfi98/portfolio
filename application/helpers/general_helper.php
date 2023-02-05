@@ -302,6 +302,11 @@ if (!function_exists('web')) {
 if (!function_exists('countVisitor')) {
 	function countVisitor()
 	{
+		// $timezone_offset_minutes = 330;  // $_GET['timezone_offset_minutes']
+
+		// // Convert minutes to seconds
+		// $timezone_name = timezone_name_from_abbr("", $timezone_offset_minutes*60, false);
+		// date_default_timezone_set($timezone_name);
 		
 		$ci = get_instance();
 		$ip    = $ci->input->ip_address(); // Mendapatkan IP user
