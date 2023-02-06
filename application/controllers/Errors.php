@@ -21,15 +21,15 @@ class Errors extends CI_Controller {
 		$data = [
 			'title' => '404 Page Not Found',
 		];
-		if ($this->session->userdata('user_session')) {
-			if (!isLogin()) {
-				danger("Anda belum login, silahkan login terlebih dahulu");
-				redirect('login');
-			}
-			$this->template->load('templates/cms', 'errors/404', $data);
-		}else{
-			$this->template->load('templates/landing', 'errors/404-landing', $data);
-		}
+		// if ($this->session->userdata('user_session')) {
+		// 	if (!isLogin()) {
+		// 		danger("Anda belum login, silahkan login terlebih dahulu");
+		// 		redirect('login');
+		// 	}
+		// 	$this->template->load('templates/cms', 'errors/404', $data);
+		// }else{
+		// }
+		$this->template->load('templates/landing', 'errors/404-landing', $data);
 	}
 
 }
