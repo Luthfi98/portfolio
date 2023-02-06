@@ -2,7 +2,12 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Errors extends CI_Controller {
-
+	public function __construct()
+	{
+		parent::__construct();
+		countVisitor();
+		$this->output->cache(1440);
+	}
 	public function error403()
 	{
 		$data = [
