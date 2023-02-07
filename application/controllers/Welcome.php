@@ -15,7 +15,7 @@ class Welcome extends CI_Controller {
 		$this->db->cache_on();
 		$experience = Experience::orderBy('start_at', 'DESC')->get();
 		$skill = Skill::get();
-		$project = Project::limit(6)->get();
+		$project = Project::orderBy('id', 'DESC')->limit(6)->get();
 		$data = [
 			'title' => 'Home',
 			'experience' => $experience,
