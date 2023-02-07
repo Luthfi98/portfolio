@@ -33,8 +33,8 @@ if (!function_exists('encrypt_decrypt')) {
 
 		$output = false;
 	    $encrypt_method = "AES-256-CBC";
-	    $secret_key = '38ba3aa33076bc617ca8b04a173e7f424930da18';
-	    $secret_iv = 'petologi';
+	    $secret_key = '321c3547f8749bf67c17892f642eb74e807cb058';
+	    $secret_iv = 'luthfi-ihdalhusnayain';
 	    // hash
 	    $key = hash('sha256', $secret_key);
 

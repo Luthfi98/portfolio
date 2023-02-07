@@ -7,7 +7,7 @@ class Welcome extends CI_Controller {
 	{
 		parent::__construct();
 		countVisitor();
-		// $this->output->cache(1440);
+		$this->output->cache(1440);
 	}
 
 	public function index()
