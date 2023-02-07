@@ -154,7 +154,7 @@
                     <div class="line-bot"></div>
                     <div class="spacer-15"></div>
                     <p class="text-light">Berikut beberapa project terakhir yang saya kerjakan.</p>
-                    <div class="spacer-45"></div>
+                    <div class="spacer-45"><a href="<?= base_url('project') ?>" class="btn btn-sm btn-primary" title="Lihat Semua Projek">Lihat Semua</a></div>
                 </div>
             </div>
         </div><!--end row-->

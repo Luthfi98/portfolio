@@ -7,7 +7,7 @@ class Welcome extends CI_Controller {
 	{
 		parent::__construct();
 		countVisitor();
-		$this->output->cache(1440);
+		// $this->output->cache(1440);
 	}
 
 	public function index()
@@ -27,20 +27,35 @@ class Welcome extends CI_Controller {
 		$this->template->load('templates/landing','landing/home', $data,FALSE);
 	}
 
-	function project($slug)
+	function project($slug = null)
 	{
-		$this->db->cache_on();
-		$project = Project::where('slug', $slug)->first();
-		$projects = Project::where('id', '!=', $project->id)->limit(3)->get();
-		$type = Project::groupBy('type')->get(['type']);
-		$this->db->cache_off();
-		$data = [
-			'title' => $project->title,
-			'project' => $project,
-			'projects' => $projects,
-			'type' => $type
-		];
-		$this->template->load('templates/landing','landing/project-detail', $data,FALSE);
+		if ($slug) {
+			$this->db->cache_on();
+			$project = Project::where('slug', $slug)->first();
+			$projects = Project::where('id', '!=', $project->id)->limit(3)->get();
+			$type = Project::groupBy('type')->get(['type']);
+			$this->db->cache_off();
+			$data = [
+				'title' => $project->title,
+				'project' => $project,
+				'projects' => $projects,
+				'type' => $type
+			];
+			
+			$this->template->load('templates/landing','landing/project-detail', $data,FALSE);
+		}else{
+			$this->db->cache_on();
+			$projects = Project::orderBy('id', 'DESC')->get();
+			$type = Project::groupBy('type')->get(['type']);
+			$this->db->cache_off();
+			$data = [
+				'title' => 'List Projek',
+				'projects' => $projects,
+				'type' => $type
+			];
+			
+			$this->template->load('templates/landing','landing/project', $data,FALSE);
+		}
 	}
 
 	public function cv()
