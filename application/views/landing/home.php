@@ -90,7 +90,6 @@
 <!-- RESUME START -->
 <section class="section" style="background-color: #030d0f;" id="experience">
  <div class="progressbox" style="margin-bottom: 100px;">
-    <!-- <h6 class="font-weight-normal"><?= $value->name ?></h6> -->
     <div class="progresses bg-dark">
         <div class="progresses-bar" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
         </div>
