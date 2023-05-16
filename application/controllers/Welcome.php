@@ -80,7 +80,7 @@ class Welcome extends CI_Controller {
 
 		$html = $this->load->view('cv-pdf', $data, true);
 		$this->pdf->createPDF($html, $data['title'], false, 'A4', 'potrait');
-		var_dump($html);die;
+		
 	}
 
 }
