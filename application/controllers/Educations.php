@@ -12,6 +12,8 @@ class Educations extends CI_Controller {
 		}
 	}
 
+	
+
 	public function index()
 	{
 
