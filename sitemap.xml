@@ -1,77 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
-
+		<!--	created with www.mysitemapgenerator.com	-->
+		<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-  <loc>https://ourporto.com/</loc>
-  <lastmod>2023-10-27T01:35:27+00:00</lastmod>
-  <priority>1.00</priority>
+	<loc>https://ourporto.com/</loc>
+	<lastmod>2023-11-25T13:34:32+01:00</lastmod>
+	<priority>1.0</priority>
 </url>
 <url>
-  <loc>https://ourporto.com/show-cv</loc>
-  <lastmod>2023-10-27T01:35:27+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://ourporto.com/show-cv</loc>
+	<lastmod>2023-11-25T13:34:32+01:00</lastmod>
+	<priority>1.0</priority>
 </url>
 <url>
-  <loc>https://ourporto.com/project/pengaduan-dan-pembuatan-surat-pengantar</loc>
-  <lastmod>2023-10-27T01:35:27+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://ourporto.com/project/pengaduan-dan-pembuatan-surat-pengantar</loc>
+	<lastmod>2023-11-25T13:34:32+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ourporto.com/project/matematika-asik-masik</loc>
-  <lastmod>2023-10-27T01:35:27+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://ourporto.com/project/matematika-asik-masik</loc>
+	<lastmod>2023-11-25T13:34:32+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ourporto.com/project/stuff-every-one-needs</loc>
-  <lastmod>2023-10-27T01:35:27+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://ourporto.com/project/stuff-every-one-needs</loc>
+	<lastmod>2023-11-25T13:34:32+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ourporto.com/project/spk-pemilihan-jurusan</loc>
-  <lastmod>2023-10-27T01:35:27+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://ourporto.com/project/spk-pemilihan-jurusan</loc>
+	<lastmod>2023-11-25T13:34:32+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ourporto.com/project/petology-veterinary-center</loc>
-  <lastmod>2023-10-27T01:35:27+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://ourporto.com/project/petology-veterinary-center</loc>
+	<lastmod>2023-11-25T13:34:32+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ourporto.com/project/sistem-booking-bengkel-vespa-notifikasi-wa</loc>
-  <lastmod>2023-10-27T01:35:27+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://ourporto.com/project/sistem-booking-bengkel-vespa-notifikasi-wa</loc>
+	<lastmod>2023-11-25T13:34:32+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ourporto.com/project/sistem-penjamin-mutu-dosen</loc>
-  <lastmod>2023-10-27T01:35:27+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://ourporto.com/project/sistem-penjamin-mutu-dosen</loc>
+	<lastmod>2023-11-25T13:34:32+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ourporto.com/project</loc>
-  <lastmod>2023-10-27T01:35:27+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://ourporto.com/project</loc>
+	<lastmod>2023-11-25T13:34:32+01:00</lastmod>
+	<priority>1.0</priority>
 </url>
 <url>
-  <loc>https://ourporto.com/project/e-laundry</loc>
-  <lastmod>2023-10-27T01:35:27+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://ourporto.com/project/e-laundry</loc>
+	<lastmod>2023-11-25T13:34:32+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ourporto.com/project/sistem-pakar-diagnosis-penyakit-tanaman-manggis-siptagis</loc>
-  <lastmod>2023-10-27T01:35:27+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://ourporto.com/project/sistem-pakar-diagnosis-penyakit-tanaman-manggis-siptagis</loc>
+	<lastmod>2023-11-25T13:34:35+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ourporto.com/project/penjualan-obat-apotek-kartini</loc>
-  <lastmod>2023-10-27T01:35:27+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://ourporto.com/project/penjualan-obat-apotek-kartini</loc>
+	<lastmod>2023-11-25T13:34:36+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
-
-
 </urlset>
