@@ -37,27 +37,6 @@
                   </tr>
                </thead>
                <tbody>
-                  <?php 
-                  $no =1;
-                  foreach ($visitor as $value): ?>
-                  <tr>
-                     <td><?= $no++ ?></td>
-                     <td><?= $value->ip ?></td>
-                     <td><?= date_format_indo($value->date) ?></td>
-                     <td><?= $value->hits ?></td>
-                     <td>
-                        <?php if ($value->online):
-                           $date = date("Y-m-d", $value->online);
-                           $time = date("H:i:s", $value->online);
-                         ?>
-                           <?= date_format_indo($date).'<br>'.$time ?>
-                        <?php else: ?>
-                           -
-                        <?php endif ?>
-                        
-                     </td>
-                  </tr>
-                  <?php endforeach ?>
                </tbody>
             </table>
          </div>
@@ -66,6 +45,36 @@
 </main>
 
 <script>
-   $("#dt").dataTable()
+	$(document).ready(function(){
+		loadData()
+	})
+
+	function loadData() {
+    dt = $("#dt").DataTable({
+        "lengthChange": true,
+        "autoWidth": false,
+        "processing": true,
+        "serverSide": true,
+        "destroy": true,
+        "ajax": {
+            "url": base_url + "visitors",
+            "type": "POST",
+            "headers": {
+                "X-CSRF-TOKEN": '<?= $this->security->get_csrf_hash() ?>'
+            }
+        },
+        "columnDefs": [
+            {
+                targets: [-1, 0],
+                orderable: false
+            },
+            {
+                targets: [-1, 0],
+                class: 'text-nowrap text-center'
+            },
+        ],
+        "order": [],
+    });
+}
 
 </script>

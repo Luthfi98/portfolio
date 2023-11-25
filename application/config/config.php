@@ -468,7 +468,7 @@ $config['csrf_token_name'] = 'csrf_'.date("ymd").'_token_'.date("ymd").'_name';
 $config['csrf_cookie_name'] = 'csrf_'.date("ymd").'_cookie_'.date("ymd").'_name';
 $config['csrf_expire'] = 3600;
 $config['csrf_regenerate'] = TRUE;
-$config['csrf_exclude_uris'] = array();
+$config['csrf_exclude_uris'] = array('logs', 'visitors');
 
 /*
 |--------------------------------------------------------------------------
