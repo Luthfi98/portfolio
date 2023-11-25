@@ -25,6 +25,7 @@
         <link href="<?= base_url('assets/landing/') ?>css/magnific-popup.css" rel="stylesheet" type="text/css" />    
         <!-- CSS -->
         <link href="<?= base_url('assets/landing/') ?>css/style.css" rel="stylesheet" type="text/css" />
+        <script src="<?= base_url('assets/landing/') ?>js/jquery.min.js"></script>
 
     </head>
 
@@ -92,7 +93,6 @@
         <!-- Back to top -->         
         
         <!-- javascript -->
-        <script src="<?= base_url('assets/landing/') ?>js/jquery.min.js"></script>
         <script src="<?= base_url('assets/landing/') ?>js/bootstrap.bundle.min.js"></script>
         <script src="<?= base_url('assets/landing/') ?>js/menu.js"></script>
         <script src="<?= base_url('assets/landing/') ?>js/scrollspy.min.js"></script>
