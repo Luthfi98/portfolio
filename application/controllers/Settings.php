@@ -35,6 +35,8 @@ class Settings extends CI_Controller {
 
 		$this->form_validation->set_rules('seo_tag[]', 'SEO Tag', 'trim', messageError());
 		$this->form_validation->set_rules('seo_description', 'SEO Deskripsi', 'trim', messageError());
+		$this->form_validation->set_rules('gtag_header', 'Tag on Header', 'trim', messageError());
+		$this->form_validation->set_rules('gtag_body', 'Tag on Body', 'trim', messageError());
 		if ($_FILES['icon']['name'] != '') {
 			$this->form_validation->set_rules('icon', 'Icon', 'trim|callback_upload_icon', messageError());
 		}
@@ -48,6 +50,8 @@ class Settings extends CI_Controller {
 			$setting->name = $request['name'];
 			$setting->seo_tag = implode(",", $request['seo_tag']);
 			$setting->seo_description = $request['seo_description'];
+			$setting->gtag_header = $request['gtag_header'];
+			$setting->gtag_body = $request['gtag_body'];
 
 			if ($_FILES['icon']['name'] != '') {
 				$icon = $setting->icon;

@@ -26,7 +26,7 @@
 <!-- ABOUT START -->
 <section class="section text-light" id="skill" style="background-color: #030d0f;">
  <div class="progressbox" style="margin-bottom: 100px;">
-    <!-- <h6 class="font-weight-normal"><?= $value->name ?></h6> -->
+    <!-- <h6 class="font-weight-normal"><?= web()->name ?></h6> -->
     <div class="progresses bg-dark">
         <div class="progresses-bar" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
         </div>

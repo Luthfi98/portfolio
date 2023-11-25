@@ -75,6 +75,26 @@
             				</div>
                 		</div>
                 	</div>
+
+					<h5>Google Tag</h5>
+                	<hr>
+                	<div class="row">
+                		<div class="col-lg-6 col-12">
+                			<div class="mb-3">
+            				    <label for="gtag_header" class="form-label">Tag on Header</label>
+
+								<textarea name="gtag_header" rows="5" id="gtag_header" class="form-control"><?= set_value('gtag_header', $setting->gtag_header) ?></textarea>
+            				    <?= isset($error['gtag_header']) ? $error['gtag_header'] : ''  ?>
+            				</div>
+                		</div>
+                		<div class="col-lg-6 col-12">
+                			<div class="mb-3">
+								<label for="gtag_body" class="form-label">Tag on Body</label>
+            				    <textarea name="gtag_body" rows="5" id="gtag_body" class="form-control"><?= set_value('gtag_body', $setting->gtag_body) ?></textarea>
+            				    <?= isset($error['gtag_body']) ? $error['gtag_body'] : ''  ?>
+            				</div>
+                		</div>
+                	</div>
             		<button type="submit" class="btn app-btn-primary" >Simpan</button>
                 </form>
          </div>

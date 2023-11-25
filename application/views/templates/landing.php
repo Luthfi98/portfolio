@@ -26,31 +26,16 @@
         <!-- CSS -->
         <link href="<?= base_url('assets/landing/') ?>css/style.css" rel="stylesheet" type="text/css" />
         <script src="<?= base_url('assets/landing/') ?>js/jquery.min.js"></script>
-		<!-- Google Tag Manager -->
-		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-		})(window,document,'script','dataLayer','GTM-W3B5TQPF');</script>
-		<!-- End Google Tag Manager -->
+
+		<?= web()->gtag_header ?>
 		
-		<!-- Google tag (gtag.js) -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-VP5L2S4CKZ"></script>
-		<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
+		
 
-		gtag('config', 'G-VP5L2S4CKZ');
-		</script>
+</head>
 
-    </head>
-
-    <body>
-		<!-- Google Tag Manager (noscript) -->
-		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W3B5TQPF"
-		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-		<!-- End Google Tag Manager (noscript) -->
+<body>
+	<?= web()->gtag_body ?>
+	
         <!-- Loader -->
         <div id="preloader">
             <div id="status">
