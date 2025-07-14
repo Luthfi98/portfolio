@@ -1,6 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 use Dompdf\Dompdf;
+#[\AllowDynamicProperties]
 class Pdf
 {
     function createPDF($html, $filename='', $download=TRUE, $paper='A4', $orientation='portrait'){
